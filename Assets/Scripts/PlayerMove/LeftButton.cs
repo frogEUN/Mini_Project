@@ -14,7 +14,9 @@ public class LeftButton : MonoBehaviour
     {
         if (click)
         {
-            player.Translate(new Vector3(-moveSpeed * Time.deltaTime, 0, 0));
+            player.rotation = Quaternion.Euler(new Vector3(0, 0, -90f));
+            player.Translate(new Vector3(0, -moveSpeed * Time.deltaTime, 0));
+            
         }
     }
 
