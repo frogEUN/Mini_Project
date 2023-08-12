@@ -7,6 +7,8 @@ public class Buiding : MonoBehaviour
     public int index;  // 건물을 찾을 수 있는 index 값
     private GameObject orderButton;
 
+    public Vector3 UIposition;  // orderUI가 생길 position
+
     private Order _order;
     public Order order
     {
@@ -35,11 +37,16 @@ public class Buiding : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             orderButton.SetActive(true);
+            GameData.onBuilding = this;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         orderButton.SetActive(false);
+        if (GameData.onBuilding == this)
+        {
+            GameData.onBuilding = null;
+        }
     }
 }

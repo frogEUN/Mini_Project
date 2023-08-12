@@ -47,3 +47,9 @@ TagManager:
   - name: buiding
     uniqueID: 40211995
     locked: 0
+  - name: image
+    uniqueID: 2305430749
+    locked: 0
+  - name: image2
+    uniqueID: 1621506599
+    locked: 0
