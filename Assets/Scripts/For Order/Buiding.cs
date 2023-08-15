@@ -5,7 +5,7 @@ using UnityEngine;
 public class Buiding : MonoBehaviour
 {
     public int index;  // 건물을 찾을 수 있는 index 값
-    private GameObject orderButton;
+    public GameObject orderButton;
 
     public Vector3 UIposition;  // orderUI가 생길 position
 
@@ -29,7 +29,7 @@ public class Buiding : MonoBehaviour
 
     private void Start()
     {
-        orderButton = GameObject.Find("OrderButton");
+        orderButton.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,12 +38,18 @@ public class Buiding : MonoBehaviour
         {
             orderButton.SetActive(true);
             GameData.onBuilding = this;
+            GameData.nowOrder = OrderMaker.instance.orders[index];
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        orderButton.SetActive(false);
+        if (GameData.nowOrder == OrderMaker.instance.orders[index])
+        {
+            orderButton.SetActive(false);
+            GameData.nowOrder = null;
+        }
+        
         if (GameData.onBuilding == this)
         {
             GameData.onBuilding = null;

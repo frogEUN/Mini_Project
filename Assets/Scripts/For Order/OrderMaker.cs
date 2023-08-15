@@ -29,6 +29,6 @@ public class OrderMaker : MonoBehaviour
         orders[randBuilding] = Instantiate<Order>(prefab, buildings[randBuilding].UIposition, Quaternion.identity);
         orders[randBuilding].orderedFruit = fruitList[randFruit];
 
-        Destroy(orders[randBuilding].gameObject, 3f);
+        Destroy(orders[randBuilding].gameObject, 10f);
     }
 }
