@@ -6,24 +6,19 @@ using UnityEngine.UI;
 public class OrderPanelInventoryUI : MonoBehaviour
 {
     public int idx;
-    private Image image;
+    public Image image;
+    public InventoryManager inventoryManager;
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        //image = GetComponent<Image>();
     }
 
     public void SetImage()
     {
-        if(InventoryManager.instance.fruitsInInventory[idx]==null)
-        {
-            image.sprite = null;
-        }
-        else
-        {
-            image.sprite = InventoryManager.instance.fruitsInInventory[idx].fruitImage;
-        }
-        
+        image.sprite = null;
+        if (GameData.inventory[idx] == null) return;
+        image.sprite = GameData.inventory[idx].fruitImage;
 
     }
 }

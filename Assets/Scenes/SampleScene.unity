@@ -861,6 +861,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idx: 0
+  image: {fileID: 164073964}
+  inventoryManager: {fileID: 1423794361}
 --- !u!1 &186719119
 GameObject:
   m_ObjectHideFlags: 0
@@ -6497,6 +6499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idx: 1
+  image: {fileID: 1402099758}
+  inventoryManager: {fileID: 1423794361}
 --- !u!1 &1423794359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,10 +6555,6 @@ MonoBehaviour:
   - {fileID: 1046757794}
   - {fileID: 1997110799}
   slotUIPrefab: {fileID: 8565771845080760551, guid: ba8fd26c8de30574cbb231abec02654e, type: 3}
-  fruitsInInventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1440027219
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,6 +6943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idx: 2
+  image: {fileID: 1453468715}
+  inventoryManager: {fileID: 1423794361}
 --- !u!1 &1460529662
 GameObject:
   m_ObjectHideFlags: 0

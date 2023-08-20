@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
     public Slot[] slots;
     public SlotUI slotUIPrefab;
-    public Fruit[] fruitsInInventory = new Fruit[3];
+    public Dictionary<int, Fruit> fruitsInInventory;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
                 slots[i].slotUI.transform.SetParent(slots[i].transform);
                 slots[i].slotUI.transform.localPosition = Vector3.zero;
 
-                fruitsInInventory[slots[i].slotIndex] = fruit;
+                GameData.inventory[i] = fruit;
                 return;
             }
         }
